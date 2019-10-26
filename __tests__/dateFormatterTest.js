@@ -37,7 +37,7 @@ describe("when the system date and date to format are different", () => {
     const dateTimeToFormat = new Date(2019, June, 3, 7, 45).getTime();
     const systemDateTime = new Date(2019, February, 8, 4, 15).getTime();
     const formattedDate = format(dateTimeToFormat, systemDateTime);
-    expect(formattedDate.slice(0, 3)).toBe("03");
+    expect(formattedDate.slice(0, 2)).toBe("03");
   });
   it("formats day correctly for days after the 10th", () => {
     const June = 5;
@@ -45,7 +45,7 @@ describe("when the system date and date to format are different", () => {
     const dateTimeToFormat = new Date(2019, June, 23, 7, 45).getTime();
     const systemDateTime = new Date(2019, February, 8, 4, 15).getTime();
     const formattedDate = format(dateTimeToFormat, systemDateTime);
-    expect(formattedDate.slice(0, 3)).toBe("23");
+    expect(formattedDate.slice(0, 2)).toBe("23");
   });
   it("formatted date has slashes in the right places and matches the dd/mm/yyyy format", () => {
     const November = 10;
